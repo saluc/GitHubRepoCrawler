@@ -23,7 +23,6 @@ import ch.usi.dag.disl.Reflection.Class;
 import ch.usi.dag.disl.Reflection.MissingClassException;
 import ch.usi.dag.disl.guardcontext.ReflectionStaticContext;
 
-import com.liyaos.metabenchmark.MainArguments;
 
 /**
  * Utility class containing assorted guards for the instrumentation.
@@ -213,8 +212,7 @@ final class Guard {
 
 static final class ThreadPoolOnly {
 	static Set <Type> interfacesToCheck = Arrays.asList (
-			Executor.class, ExecutorService.class, AbstractExecutorService.class, ThreadPoolExecutor.class, ForkJoinPool.class
-			).stream ().map (Type::getType).collect (Collectors.toSet ());
+			Executor.class, ExecutorService.class).stream ().map (Type::getType).collect (Collectors.toSet ());
 
 
 	static Map <String, Boolean> cachedResults = new HashMap <> ();

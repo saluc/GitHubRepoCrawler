@@ -11,13 +11,13 @@ import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicLong;
 
-import com.liyaos.metabenchmark.MainArguments;
+//import com.liyaos.metabenchmark.MainArguments;
 import com.liyaos.metabenchmark.UseCases;
 import com.liyaos.metabenchmark.profiler.ArchiveDumper;
 import com.liyaos.metabenchmark.profiler.Dumper;
 import com.liyaos.metabenchmark.profiler.TTYDumper;
 
-import static com.liyaos.metabenchmark.MainArguments.*;
+//import static com.liyaos.metabenchmark.MainArguments.*;
 import static com.liyaos.metabenchmark.UseCases.*;
 
 public class Profiler {
@@ -176,16 +176,16 @@ public class Profiler {
 
         invokeDynamicUsed = new ConcurrentHashMap<>();
 
-        switch(MainArguments.selectedUseCase()) {
+        //switch(MainArguments.selectedUseCase()) {
 
-            case UseCases.Matrix:
-                Runtime.getRuntime().addShutdownHook(new Thread(ProfilerMatrix::dump));
-                break;
-
-            default:
+//            case UseCases.Matrix:
+//                Runtime.getRuntime().addShutdownHook(new Thread(ProfilerMatrix::dump));
+//                break;
+//
+//            default:
                 Runtime.getRuntime().addShutdownHook(new Thread(Profiler::dump));
-                break;
-        }
+//                break;
+   //     }
     }
 
     private static int maximal(ConcurrentHashMap<Integer, Integer> distribute) {

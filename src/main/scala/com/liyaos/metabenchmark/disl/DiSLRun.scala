@@ -20,7 +20,7 @@ class DiSLRun {
   var serverStarted = false
   var failed: Option[Throwable] = None
 
-  val cmd = s"${DiSLConfig.dislProgram} -d ${DiSLConfig.dislHome} -cs -i=${DiSLConfig.instJar}"
+  val cmd = s"${DiSLConfig.dislProgram} -d ${DiSLConfig.dislHome} -cs -i=${DiSLConfig.instJar} -s_nodynamicbypass -s_exclusionlist=${DiSLConfig.exclList}"
 
   def setup() = {
     val f = Future {

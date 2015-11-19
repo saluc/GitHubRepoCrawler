@@ -15,7 +15,12 @@ public class InstrumentationThreadPool {
 	 @Before(marker = BodyMarker.class, guard = ThreadPoolOnly.class)    
 	     static void updateMethodInvocation(final DynamicContext dc, final MethodStaticContext msc) {
 	     
-	     Profiler.setMethodInvocation(dc.getThis(),msc.thisMethodFullName());
+		 try {
+	     	Profiler.setMethodInvocation(dc.getThis(),msc.thisMethodFullName());
+		 }
+		 catch (Exception e) {
+			 
+		 }
 	     	
 	     }
 }
